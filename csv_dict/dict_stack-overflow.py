@@ -20,8 +20,11 @@ def replace(x):
 df1["labels"]=df1["labels"].apply(replace) # You may make new column
 print(df1)
 
+"""
+You can use either of them, no need to use both of them...
+"""
 
-# Or same but one-liner solution is
-df1["labels"]=df1["labels"].apply(lambda x:",".join([di.get(a) if di.get(a)!=None else a for a in x.split(",")]))
+# # Or same but one-liner solution is
+# df1["labels"]=df1["labels"].apply(lambda x:",".join([di.get(a) if di.get(a)!=None else a for a in x.replace('"',"").split(",")]))
 
 print(df1)
